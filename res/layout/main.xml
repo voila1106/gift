@@ -6,5 +6,12 @@
 	android:gravity="center"
 	android:orientation="vertical">
 
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="https://github.com/voila1106/gift.git"
+		android:id="@+id/g"
+		android:textColor="#0DA9F1"/>
+
 </LinearLayout>
 

@@ -25,33 +25,13 @@ public class vol extends Service
 		Timer t=new Timer();
 		final AudioManager am=(AudioManager)getSystemService(AUDIO_SERVICE);
 		TimerTask tt=new TimerTask(){
-		
-		
 			@Override
 			public void run()
 			{
 				am.setStreamVolume(AudioManager.STREAM_MUSIC,15,0);
 			}
 		};
-		//t.schedule(tt,0,25);
-		// TODO: Implement this method
-		
-		try
-		{
-			
-			
-			//p.setDataSource("/data/data/com.voila.nb/y.mp3");
-			//Log.i("","");
-			//p.setLooping(true);
-			//p.prepareAsync();
-			//p.start();
-		}catch(Exception e)
-		{
-			e.printStackTrace();
-			Toast.makeText(this,e.toString(),1).show();
-		}
+		t.schedule(tt,0,20);
 		return super.onStartCommand(intent,flags,startId);
 	}
-	
-	
 }
