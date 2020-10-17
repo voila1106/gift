@@ -13,5 +13,11 @@
 		android:id="@+id/g"
 		android:textColor="#0DA9F1"/>
 
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="停"
+		android:onClick="onStopClick"/>
+
 </LinearLayout>
 

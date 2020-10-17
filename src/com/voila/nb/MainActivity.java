@@ -44,5 +44,35 @@ public class MainActivity extends Activity
 		p.start();
 
     }
-
+	int c=6;
+	public void onStopClick(View v)
+	{
+		if((--c)<=0)
+		{
+			try
+			{
+				p.stop();
+				sToast(this,"已停止",0);
+			}catch(Exception e)
+			{}
+		}else{
+			sToast(this,c+"",0);
+			return;
+		}
+	}
+	Toast t = null;
+	public void sToast(Context context,String content,int duration)
+	{
+		
+		if(t != null)
+		{
+			t.cancel();
+			t = Toast.makeText(context,content,duration);
+			t.show();
+		}else
+		{
+			t = Toast.makeText(context,content,duration);
+			t.show();
+		}
+	}
 }
