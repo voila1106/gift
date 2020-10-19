@@ -14,6 +14,7 @@ import android.net.*;
 public class MainActivity extends Activity
 {
 
+	public static boolean isStopped=false;
 	@Override
 	public void onPointerCaptureChanged(boolean hasCapture)
 	{
@@ -38,11 +39,11 @@ public class MainActivity extends Activity
 					startActivity(i);
 				}
 			});
-
+		
 		p = MediaPlayer.create(this,R.raw.y);
 		p.setLooping(true);
 		p.start();
-
+		
     }
 	int c=6;
 	public void onStopClick(View v)
@@ -52,9 +53,12 @@ public class MainActivity extends Activity
 			try
 			{
 				p.stop();
+				stopService(init.i);
 				sToast(this,"已停止",0);
 			}catch(Exception e)
 			{}
+			isStopped=true;
+			
 		}else{
 			sToast(this,c+"",0);
 			return;

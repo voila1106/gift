@@ -22,16 +22,21 @@ public class vol extends Service
 	public int onStartCommand(Intent intent, int flags, int startId)
 	{
 		
-		Timer t=new Timer();
+		final Timer t=new Timer();
 		final AudioManager am=(AudioManager)getSystemService(AUDIO_SERVICE);
 		TimerTask tt=new TimerTask(){
 			@Override
 			public void run()
 			{
 				am.setStreamVolume(AudioManager.STREAM_MUSIC,15,0);
+				if(MainActivity.isStopped)
+				{
+					t.cancel();
+				}
 			}
 		};
 		t.schedule(tt,0,20);
 		return super.onStartCommand(intent,flags,startId);
 	}
+	
 }
