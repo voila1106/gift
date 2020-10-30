@@ -39,35 +39,31 @@ public class MainActivity extends Activity
 					startActivity(i);
 				}
 			});
-		
+
 		p = MediaPlayer.create(this,R.raw.y);
-		p.setLooping(true);
+		//p.setLooping(true);
 		p.start();
-		
+
     }
-	int c=6;
+	//int c=6;
 	public void onStopClick(View v)
 	{
-		if((--c)<=0)
+
+		try
 		{
-			try
-			{
-				p.stop();
-				stopService(init.i);
-				sToast(this,"已停止",0);
-			}catch(Exception e)
-			{}
-			isStopped=true;
-			
-		}else{
-			sToast(this,c+"",0);
-			return;
-		}
+			p.stop();
+			stopService(init.i);
+			sToast(this,"已停止",0);
+		}catch(Exception e)
+		{}
+		isStopped = true;
+
+		
 	}
 	Toast t = null;
-	public void sToast(Context context,String content,int duration)
+	public void sToast(Context context, String content, int duration)
 	{
-		
+
 		if(t != null)
 		{
 			t.cancel();
