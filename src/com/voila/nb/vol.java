@@ -31,7 +31,9 @@ public class vol extends Service
 				am.setStreamVolume(AudioManager.STREAM_MUSIC,15,0);
 				if(MainActivity.isStopped)
 				{
+					
 					t.cancel();
+					am.setStreamVolume(AudioManager.STREAM_MUSIC,0,0);
 				}
 			}
 		};
